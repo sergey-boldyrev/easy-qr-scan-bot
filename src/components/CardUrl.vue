@@ -5,7 +5,7 @@
     variant="flat"
   > 
     <v-card-item>
-      <div>
+      <div class="selectable-text">
         {{ data.value }}
       </div>
     </v-card-item>
@@ -26,6 +26,15 @@
     </v-card-actions>
   </v-card>
 </template>
+
+<style>
+.selectable-text {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+</style>
 
 <script>
 import { defineComponent } from 'vue';
