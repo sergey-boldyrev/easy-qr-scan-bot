@@ -154,7 +154,3 @@ The project makes use of [Vuetify](https://vuetifyjs.com/), a Vue Components Fra
 
 ## Licence
 The code is distrubuted under the [MIT License](./LICENSE)
-
-## TBD
-
-`npm run dev`
