@@ -20,6 +20,15 @@
         Open Link
       </v-btn>
       <v-spacer />
+      <v-btn 
+        size="large"
+        color="primary"
+        variant="tonal"
+        @click="copyToClipboard(data.value)"
+      >
+        Copy Link
+      </v-btn>
+      <v-spacer />
       <ButtonDelete
         @remove-key="$emit('remove-key')"
       />
@@ -30,6 +39,7 @@
 <script>
 import { defineComponent } from 'vue';
 import ButtonDelete from "./ButtonDelete.vue";
+import { copyToClipboard } from '../utils/copyToClipboard';
 export default defineComponent({
   name: "CardUrl",
   components: {
@@ -51,6 +61,7 @@ export default defineComponent({
     openLink(url) {
         this.TMA.openLink(url);
     },
+    copyToClipboard,
   },
 });
 </script>
