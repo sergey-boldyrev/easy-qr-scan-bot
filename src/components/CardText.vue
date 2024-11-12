@@ -11,6 +11,15 @@
     </v-card-item>
     <v-card-actions>
       <v-spacer />
+      <v-btn 
+        size="large"
+        color="primary"
+        variant="tonal"
+        @click="copyToClipboard(atext)"
+      >
+        Copy Text
+      </v-btn>
+      <v-spacer />
       <ButtonDelete
         @remove-key="$emit('remove-key')"
       />
@@ -21,6 +30,7 @@
 <script>
 import { defineComponent } from 'vue';
 import ButtonDelete from "./ButtonDelete.vue";
+import { copyToClipboard } from '../utils/copyToClipboard';
 export default defineComponent({
   name: "CardText",
   components: {
@@ -47,6 +57,7 @@ export default defineComponent({
     openLink(lat, lng) {
         this.TMA.openLink('https://maps.google.com/?q=' + lat + ',' + lng);
     },
+    copyToClipboard,
   },
 });
 </script>
